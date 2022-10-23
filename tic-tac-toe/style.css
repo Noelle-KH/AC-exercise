@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  background-color: #565957;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+#app table {
+  align-self: center;
+  border-collapse: collapse;
+}
+
+#app table tr td:not(:last-child) {
+  border-right: 12px solid rgba(255,255,255,.5);
+}
+
+#app table tr:not(:last-child) td {
+  border-bottom: 12px solid rgba(255,255,255,.5);
+}
+
+#app table tr td {
+  height: 120px;
+  width: 120px;
+}
+
+#app table tr td div {
+  font-size: 80px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#app table tr td .circle::after {
+  content: "O";
+  color: rgba(121, 247, 207, .6);
+}
+
+#app table tr td .cross::after {
+  content: "X";
+  color: rgba(255, 115, 50, .6);
+}
+
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 26vh;
+  width: 100%;
+  padding: 100px 0;
+  background-color: rgba(250, 235, 215,.8);
+  text-align: center;
+}
+
+.completed p {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.completed button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
