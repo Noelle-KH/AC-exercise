@@ -38,6 +38,10 @@ header nav a:hover {
   background-color: #5c95ff;
   color: #333;
 }
+header nav .active {
+  background-color: #5c95ff;
+  color: #333;
+}
 
 main {
   padding-top: 50px;

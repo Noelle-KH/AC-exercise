@@ -59,6 +59,10 @@ header {
         color: $nav-link-hover-color;
       }
     }
+    .active {
+      background-color: $nav-link-hover-background;
+      color: $nav-link-hover-color;
+    }
   }
 }
 
