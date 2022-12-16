@@ -1,0 +1,69 @@
+$header-background: #333;
+$header-padding: 0 80px;
+$nav-link-color: #f8f8f8;
+$nav-link-border: 2px solid #5c95ff;
+$first-nav-link-hover: #e8e5da;
+$nav-link-hover-background: #5c95ff;
+$nav-link-hover-color: #333;
+$nav-link-font-size: 1.2rem;
+$nav-link-padding: 5px 10px;
+$background-color: #413f54;
+$main-color: #e2e2e2;
+$main-padding: 50px;
+
+@mixin defaultFlex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin defaultBoxShadow() {
+  box-shadow: 0 0 10px #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background-color;
+}
+
+header {
+  height: 60px;
+  background-color: $header-background;
+  margin: 0 auto;
+  padding: $header-padding;
+  @include defaultFlex();
+  @include defaultBoxShadow();
+  a {
+    color: $nav-link-color;
+    text-decoration: none;
+    font-size: $nav-link-font-size;
+    &:hover {
+      color: $first-nav-link-hover;
+    }
+  }
+  nav {
+    a {
+      margin-right: 10px;
+      border: $nav-link-border;
+      border-radius: 10px;
+      padding: $nav-link-padding;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background-color: $nav-link-hover-background;
+        color: $nav-link-hover-color;
+      }
+    }
+  }
+}
+
+main {
+  padding-top: $main-padding;
+  text-align: center;
+  color: $main-color;
+}
