@@ -17,22 +17,15 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  const title = '首頁'
+  res.render('index', { title })
 })
 
-app.get('/about', (req, res) => {
-  const about = true
-  res.render('about', { about })
-})
-
-app.get('/portfolio', (req, res) => {
-  const portfolio = true
-  res.render('portfolio', { portfolio })
-})
-
-app.get('/contact', (req, res) => {
-  const contact = true
-  res.render('contact', { contact })
+app.get('/:page', (req, res) => {
+  const page = req.params.page
+  const title = page[0].toUpperCase() + page.slice(1)
+  const active = { [page]: true }
+  res.render('index', { title, active })
 })
 
 app.listen(port, () => {
